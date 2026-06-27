@@ -1,0 +1,404 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 50px;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+    z-index:1000;
+}
+
+.logo h2{
+    color:#2E8B57;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#2E8B57;
+}
+
+/* ================= BANNER ================= */
+
+.banner{
+    margin-top:70px;
+    height:220px;
+    background:url("../images/hr image.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    text-shadow:2px 2px 5px black;
+}
+
+.banner h1{
+    font-size:42px;
+}
+
+.banner p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:90%;
+    margin:40px auto;
+    flex:1;
+}
+
+/* ================= TOP BAR ================= */
+
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+}
+
+.search-area{
+    display:flex;
+    gap:10px;
+}
+
+.search-area input{
+    width:300px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.search-area button{
+    padding:10px 20px;
+    background:#2E8B57;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.search-area button:hover{
+    background:#246B45;
+}
+
+/* ================= BUTTONS ================= */
+
+.action-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.action-buttons button{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.action-buttons button:nth-child(1){
+    background:#28a745;
+}
+
+.action-buttons button:nth-child(2){
+    background:#007bff;
+}
+
+.action-buttons button:nth-child(3){
+    background:#dc3545;
+}
+
+.action-buttons button:hover{
+    opacity:.85;
+}
+
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+th{
+    background:#2E8B57;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:nth-child(even){
+    background:#f9f9f9;
+}
+
+tr:hover{
+    background:#eef8f1;
+}
+
+/* ================= OLD MODAL (kept for reference) ================= */
+
+#addEmployeeModal{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    overflow:auto;
+}
+
+#addEmployeeModal form{
+    background:white;
+    width:700px;
+    margin:40px auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+#addEmployeeModal h2{
+    text-align:center;
+    color:#2E8B57;
+    margin-bottom:25px;
+}
+
+#addEmployeeModal label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+#addEmployeeModal input,
+#addEmployeeModal select,
+#addEmployeeModal textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+#addEmployeeModal textarea{
+    resize:none;
+    height:80px;
+}
+
+#addEmployeeModal button{
+    padding:12px 20px;
+    border:none;
+    border-radius:5px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+    margin-right:10px;
+}
+
+button[name="save"]{
+    background:#2E8B57;
+}
+
+button[name="save"]:hover{
+    background:#246B45;
+}
+
+#closeModal{
+    background:#dc3545;
+}
+
+#closeModal:hover{
+    background:#b52a37;
+}
+
+/* ================= MODAL (view/add/update) ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:9999;
+    overflow:auto;
+}
+
+.modal-content{
+    background:#fff;
+    width:500px;
+    margin:60px auto;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(0,0,0,.3);
+    max-height:85vh;
+    overflow-y:auto;
+}
+
+.modal-content h2{
+    text-align:center;
+    color:#2E8B57;
+    margin-bottom:20px;
+}
+
+.modal-content label{
+    display:block;
+    margin-top:12px;
+    margin-bottom:4px;
+    font-weight:bold;
+}
+
+.modal-content input,
+.modal-content select{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.modal-content p{
+    padding:6px 0;
+    border-bottom:1px solid #f0f0f0;
+    font-size:14px;
+}
+
+.modal-content button{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+    margin-right:8px;
+    background:#2E8B57;
+}
+
+.modal-content button:hover{
+    background:#246B45;
+}
+
+.modal-content button:last-child{
+    background:#dc3545;
+}
+
+.modal-content button:last-child:hover{
+    background:#b52a37;
+}
+
+/* ================= EMP LINK ================= */
+
+.emp-link{
+    color:#2E8B57;
+    cursor:pointer;
+    text-decoration:underline;
+}
+
+/* ================= ADD BUTTON ================= */
+
+#openAdd{
+    padding:10px 20px;
+    background:#2E8B57;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#openAdd:hover{
+    background:#246B45;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#2E8B57;
+    color:#fff;
+    text-align:center;
+    padding:16px;
+    font-size:13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .top-bar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .search-area{
+        width:100%;
+    }
+
+    .search-area input{
+        width:100%;
+    }
+
+    .action-buttons{
+        flex-wrap:wrap;
+    }
+
+    #addEmployeeModal form{
+        width:95%;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
+
+    .modal-content{
+        width:95%;
+    }
+}
