@@ -38,7 +38,7 @@ $inactiveEmployees = $inactiveRow['total'];
     <div class="logo">
         <!-- Replace 'images/logo.png' with your actual logo once available -->
         <!-- <img src="images/logo.png" alt="Company Logo"> -->
-        <h2>HR Employee Record System</h2>
+        <h2>HR Employee Record System <img src="images/logo.png" alt="Logo"></h2>
     </div>
 
     <nav>

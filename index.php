@@ -45,7 +45,7 @@ if(isset($_POST['login']))
 
 <div class="login-container">
 
-    <h1>HR Employee Record System</h1>
+    <h1>HR Employee Record System <img src="images/logo.png" alt="Logo" style="height:200px; display:block; margin:0 auto 10px;"></h1>
     <p>Please login to continue</p>
 
     <?php if($error != ""): ?>
