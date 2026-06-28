@@ -19,7 +19,7 @@ if(isset($_POST['login']))
 
         $_SESSION['username'] = $row['username'];
         $_SESSION['fullname'] = $row['fullname'];
-        $_SESSION['role'] = $row['role'];
+        $_SESSION['role']     = $row['role'];
 
         header("Location: dashboard.php");
         exit();
@@ -38,23 +38,19 @@ if(isset($_POST['login']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR Employee Record System</title>
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="login-page">
 
 <div class="login-container">
 
     <h1>HR Employee Record System</h1>
     <p>Please login to continue</p>
 
-    <?php
-    if($error != "")
-    {
-        echo "<p style='color:red; text-align:center;'>$error</p>";
-    }
-    ?>
+    <?php if($error != ""): ?>
+        <p style="color:red; text-align:center;"><?php echo $error; ?></p>
+    <?php endif; ?>
 
     <form action="" method="POST">
 
